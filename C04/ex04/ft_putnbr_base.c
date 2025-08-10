@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:42:51 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/08 11:14:33 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/09 15:17:10 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	base_is_valid(char *base)
 	while (base[i])
 	{
 		if ((base[i] >= 0 && base[i] <= 32) || base[i] == 126
-			|| base[i] == '+' || base[i] == 'j')
+			|| base[i] == '+' || base[i] == '-')
 			return (0);
 		j = i + 1;
 		while (base[j])
