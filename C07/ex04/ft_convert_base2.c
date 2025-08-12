@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:47:12 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/12 15:48:38 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:50:05 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	nbr_count(long int *bnb, long int len, long int *neg)
 {
 	int	count;
 
-	count = 0;
+	count = 1;
 	if (*bnb < 0)
 	{
 		(*neg)++;
@@ -72,11 +72,11 @@ int	nbr_count(long int *bnb, long int len, long int *neg)
 		*bnb = -(*bnb);
 	}
 	if (*bnb < len)
-		return (count + 1);
+		return (count);
 	while (*bnb >= len)
 	{
 		*bnb /= len;
 		count++;
 	}
-	return (count + 1);
+	return (count);
 }

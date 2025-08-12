@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 18:10:21 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/12 15:53:57 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:50:00 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,16 @@ char	*alloc_putnbr_base(int nbr, char *base)
 	str_nbr = malloc(sizeof(char) * (count + 1));
 	if (!str_nbr)
 		return (NULL);
-	str_nbr[count--] = '\0';
+	str_nbr[count] = '\0';
 	if (bnb == 0)
-		str_nbr[0] = base[0];
-	while (bnb > 0)
 	{
-		str_nbr[count] = base[bnb % len];
+		str_nbr[0] = base[0];
+		return (str_nbr);
+	}
+	while ((count - 1)-- >= 0)	//TODO split la fonction pour pouvoir avoir une nouvelle variable
+	{
+		str_nbr[count - 1] = base[bnb % len];
 		bnb /= len;
-		count--;
 	}
 	if (neg)
 		str_nbr[0] = '-';
