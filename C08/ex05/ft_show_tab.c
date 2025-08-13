@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 21:47:39 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/13 16:44:49 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/13 22:51:38 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_putnbr(int nb)
 	}
 	else
 		ft_putchar(bnb + '0');
-	ft_putchar('\n');
 }
 
 void	ft_putstr(char	*str)
@@ -56,7 +55,6 @@ void	ft_putstr(char	*str)
 		ft_putchar(str[i]);
 		i++;
 	}
-	ft_putchar('\n');
 }
 
 void	ft_show_tab(struct s_stock_str *par)
@@ -67,8 +65,11 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par[i].str != NULL)
 	{
 		ft_putnbr(par[i].size);
+		ft_putchar('\n');
 		ft_putstr(par[i].str);
+		ft_putchar('\n');
 		ft_putstr(par[i].copy);
+		ft_putchar('\n');
 		i++;
 	}
 }
