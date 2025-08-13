@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 13:23:31 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/13 18:01:02 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/13 18:03:06 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  *a chaque entree du tableau y foutre un string
  *mettre derniere entree a NULL pour marquer la fin du tableau
 */
-
+									//TODO chaque char dans charset separe une fois, pas tout les chars
 int	ft_cust_strstr(char *str, char *charset)
 {
 	int	i;
