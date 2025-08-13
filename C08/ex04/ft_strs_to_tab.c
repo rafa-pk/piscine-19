@@ -6,14 +6,15 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:32:15 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/12 21:38:54 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:43:37 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-/*
-typedef struct s_stock_str
+#include "ft_stock_str.h"
+
+/*typedef struct s_stock_str
 {
 	int		size;
 	char	*str;

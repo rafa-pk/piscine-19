@@ -6,12 +6,13 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 21:47:39 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/12 22:53:47 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:44:49 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include "ft_stock_str.h"
 
 /*typedef struct	s_stock_str
 {
