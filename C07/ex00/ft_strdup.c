@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:51:22 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/10 18:09:03 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/14 11:45:20 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(char *src)
 {
-	int	i;
+	int		i;
 	char	*dest;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 10:47:12 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/12 17:50:05 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/14 11:33:34 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,18 @@ int	base_is_valid(char *base)
 	return (1);
 }
 
+void	skip_invalid_portion(char *str, int *i, int *neg_flag)
+{
+	while ((str[*i] >= 9 && str[*i] <= 13) || str[*i] == 32)
+		(*i)++;
+	while (str[*i] == '+' || str[*i] == '-')
+	{
+		if (str[*i] == '-')
+			(*neg_flag)++;
+		(*i)++;
+	}
+}
+
 int	index_inbase(char c, char *base)
 {
 	int	i;
@@ -60,22 +72,25 @@ int	index_inbase(char c, char *base)
 	return (-1);
 }
 
-int	nbr_count(long int *bnb, long int len, long int *neg)
+int	nbr_count(int temp, char *base_to)
 {
-	int	count;
+	long int	count;
+	long int	len;
+	long int	nbr;
 
 	count = 1;
-	if (*bnb < 0)
+	len = ft_strlen(base_to);
+	nbr = temp;
+	if (nbr < 0)
 	{
-		(*neg)++;
+		nbr = -nbr;
 		count++;
-		*bnb = -(*bnb);
 	}
-	if (*bnb < len)
+	if (nbr < len)
 		return (count);
-	while (*bnb >= len)
+	while (nbr >= len)
 	{
-		*bnb /= len;
+		nbr /= len;
 		count++;
 	}
 	return (count);

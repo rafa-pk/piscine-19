@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 11:50:14 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/11 18:08:00 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/14 12:00:53 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	str_joined = malloc(sizeof(char) * table_alloc(size, strs, sep, &str));
 	if (!str_joined)
 		return (NULL);
+	str_joined[0] = '\0';
 	str = 0;
 	while (str < size)
 	{
@@ -84,9 +85,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 /*
 int	main(void)
 {
-	char	*strs[] = {"wesh", "wesh", "canapeche"};
-	char	sep[] = "()";
-	int	size = 3;
+	char	*strs[] = {"Hello", "World"};
+	char	sep[] = "";
+	int	size = 2;
 
 	printf("%s\n", ft_strjoin(size, strs, sep));
 	return (0);	
