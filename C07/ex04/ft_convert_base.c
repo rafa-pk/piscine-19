@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 18:10:21 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/14 11:43:13 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/17 12:51:08 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi_base(char *str, char *base)
 		nb += index_inbase(str[i], base);
 		i++;
 	}
-	if (neg_flag)
+	if (neg_flag % 2)
 		return (-nb);
 	return (nb);
 }
@@ -59,7 +59,7 @@ char	*putnbr_base(int nbr, char *base, char *converted_nbr, int size)
 		neg++;
 		bnb = -bnb;
 	}
-	while (size >= 0 && bnb > 0)
+	while (size > 0 && bnb > 0)
 	{
 		converted_nbr[size - 1] = base[bnb % len];
 		bnb /= len;
@@ -90,9 +90,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 /*
 int	main(void)
 {
-	char	*nbr = "1111";
-	char	*base_from = "01";
-	char	*base_to = "0123456789abcdef";
+	char	*nbr = "-+-313 56";
+	char	*base_from = "0123456789";
+	char	*base_to = "0123456";
 
 	printf("%s\n", ft_convert_base(nbr, base_from, base_to));
 	return (0);
