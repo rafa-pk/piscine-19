@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 13:56:42 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/16 21:06:12 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/17 12:02:00 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	tablen(char *str, char *charset)
 		if (char_in_set(str[i], charset))
 		{
 			strs_to_alloc++;
-			while (str[i] && !char_in_set(str[i], charset))
+			while (str[i] && char_in_set(str[i], charset))
 				i++;
 		}
 		i++;
@@ -82,7 +82,7 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	ix = 0;
 	strcount = tablen(str, charset);
-	table = malloc(sizeof(char	*) * (strcount + 1));
+	table = malloc(sizeof(char *) * (strcount + 1));
 	if (!table)
 		return (NULL);
 	while (i < strcount)
@@ -96,7 +96,7 @@ char	**ft_split(char *str, char *charset)
 /*
 int	main(void)
 {
-	char	str[] = "wesh, wesh, canapeche, je mapelle,, rafael";
+	char	str[] = "wesh, wesh, canapeche , je mapelle,, rafael";
 	char	charset[] = ", ";
 	char	**table = ft_split(str, charset);
 	int		i = 0;
@@ -106,10 +106,11 @@ int	main(void)
 		printf("table[%d]: %s\n", i, table[i]);
 		i++;
 	}
-	while (i >= 0)
+	i = 0;
+	while (table[i])
 	{
 		free(table[i]);
-		i--;
+		i++;
 	}
 	free(table);
 	return (0);
