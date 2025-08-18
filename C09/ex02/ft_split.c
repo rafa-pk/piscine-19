@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 13:56:42 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/17 12:02:00 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/18 10:28:50 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,27 @@ int	char_in_set(char sep, char *charset)
 int	tablen(char *str, char *charset)
 {
 	int	i;
+	int	word;
 	int	strs_to_alloc;
 
 	i = 0;
+	word = 0;
 	strs_to_alloc = 0;
 	while (str[i])
 	{
-		if (char_in_set(str[i], charset))
+		if (!char_in_set(str[i], charset))
 		{
-			strs_to_alloc++;
-			while (str[i] && char_in_set(str[i], charset))
-				i++;
+			if (!word)
+			{
+				word = 1;
+				strs_to_alloc++;
+			}
 		}
+		else
+			word = 0;
 		i++;
 	}
-	return (strs_to_alloc + 1);
+	return (strs_to_alloc);
 }
 
 char	*ft_strdup(char *str, int *ix, char *charset)
@@ -55,6 +61,8 @@ char	*ft_strdup(char *str, int *ix, char *charset)
 
 	i = 0;
 	len = 0;
+	while (str[*ix] && char_in_set(str[*ix], charset))
+		(*ix)++;
 	while (str[*ix + len] && !char_in_set(str[*ix + len], charset))
 		len++;
 	substr = malloc(sizeof(char) * (len + 1));
@@ -67,8 +75,6 @@ char	*ft_strdup(char *str, int *ix, char *charset)
 		i++;
 	}
 	substr[i] = '\0';
-	while (str[*ix] && char_in_set(str[*ix], charset))
-		(*ix)++;
 	return (substr);
 }
 
@@ -96,7 +102,7 @@ char	**ft_split(char *str, char *charset)
 /*
 int	main(void)
 {
-	char	str[] = "wesh, wesh, canapeche , je mapelle,, rafael";
+	char	str[] = ",,,  wesh wesh,canapeche    ,je mapelle, rafael   ,,";
 	char	charset[] = ", ";
 	char	**table = ft_split(str, charset);
 	int		i = 0;

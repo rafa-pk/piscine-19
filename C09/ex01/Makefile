@@ -6,7 +6,7 @@
 #    By: rvaz-da- <rvaz-da-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/12 23:40:19 by rvaz-da-          #+#    #+#              #
-#    Updated: 2025/08/13 12:01:03 by rvaz-da-         ###   ########.fr        #
+#    Updated: 2025/08/18 11:28:18 by rvaz-da-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c \
+SRC = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -25,7 +25,7 @@ RM = rm -f
 all: $(NAME)
 
 %.o: %.c
-	CC $(FLAGS) -I $(INCLUDES) -c $<  -o $@
+	cc $(FLAGS) -I $(INCLUDES) -c $<  -o $@
 	
 $(NAME): $(OBJ)
 		ar rcs $(NAME) $(OBJ)
