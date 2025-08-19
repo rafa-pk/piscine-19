@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:53:14 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/18 15:36:37 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/19 11:50:02 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,21 @@ int	scan_and_print(void)
 	char	buff[BUFF_SIZE];
 
 	i = 0;
-	if (read_input(buff, BUFF_SIZE) < 0)
-		return (-1);
-	while (buff[i])
+	while (1)
 	{
-		write(1, &buff[i], 1);
-		i++;
+		if (read_input(buff, BUFF_SIZE) < 0)
+		{
+			handle_errors("", errno);
+			return (-1);
+		}
+		i = 0;
+		while (buff[i])
+		{
+			write(1, &buff[i], 1);
+			i++;
+		}
+		while (buff[i])
+			buff[i--] = '\0';
 	}
 	return (0);
 }

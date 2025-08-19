@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:05:58 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/18 15:38:33 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/19 12:01:51 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,15 @@ int	main(int ac, char *av[])
 
 	i = 1;
 	if (ac == 1 || !ft_strcmp(av[1], "-"))
-	{
-		if (scan_and_print() == -1)
-			return (-1);
-	}
+		return (scan_and_print());
 	if (ac >= 2)
 	{
 		while (av[i])
 		{
-			if (ft_cat(av[i]) == -1)
-			{
-				manage_error();
-				return (-1);
-			}
+			if (ft_cat(av[i]))
+				return (1);
 			i++;
 		}
 	}
 	return (0);
-
 }
