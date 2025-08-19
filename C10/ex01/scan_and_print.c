@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:53:14 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/19 14:02:36 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:28:09 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	scan_and_print(void)
 	{
 		if (read_input(buff, BUFF_SIZE) < 0)
 		{
-			handle_errors("", errno);
-			return (-1);
+			return (handle_errors("", errno));
 		}
 		i = 0;
 		while (buff[i])
