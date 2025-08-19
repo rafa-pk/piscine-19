@@ -6,7 +6,7 @@
 /*   By: rvaz-da- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 11:53:14 by rvaz-da-          #+#    #+#             */
-/*   Updated: 2025/08/19 11:50:02 by rvaz-da-         ###   ########.fr       */
+/*   Updated: 2025/08/19 14:02:36 by rvaz-da-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	read_input(char *buff, int size)
 
 int	scan_and_print(void)
 {
-	int	i;
+	int		i;
 	char	buff[BUFF_SIZE];
 
 	i = 0;
